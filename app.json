@@ -8,41 +8,30 @@
     "owner": "rud509s-team",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon.png.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash.png.png",
       "resizeMode": "contain",
       "backgroundColor": "#1a1a2e"
     },
-    "assetBundlePatterns": ["*/"],
+    "assetBundlePatterns": ["/"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.sellerpro.amazon"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/adaptive-icon.png.png",
         "backgroundColor": "#1a1a2e"
       },
       "package": "com.sellerpro.amazon",
       "permissions": [
         "NOTIFICATIONS",
         "RECEIVE_BOOT_COMPLETED",
-        "VIBRATE",
-        "INTERNET"
+        "VIBRATE"
       ]
     },
-    "plugins": [
-      [
-        "expo-notifications",
-        {
-          "icon": "./assets/notification-icon.png",
-          "color": "#6C63FF",
-          "sounds": ["./assets/notification-sound.wav"]
-        }
-      ]
-    ],
     "extra": {
       "eas": {
         "projectId": "e5215ac3-06af-4c52-95ed-6b38769a6312"
