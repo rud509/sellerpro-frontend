@@ -262,6 +262,3 @@ export const translations = {
     logout: 'Logout',
   }
 };
-
-export type Language = 'fr' | 'en';
-export type TranslationKey = keyof typeof translations.fr;
