@@ -170,6 +170,8 @@ export default function App() {
         <Stack.Screen name="ChatHistory">
           {props => <ChatHistoryScreen {...props} />}
         </Stack.Screen>
+</Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
