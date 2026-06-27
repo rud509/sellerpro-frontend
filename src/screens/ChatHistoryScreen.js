@@ -13,7 +13,7 @@ export default function ChatHistoryScreen({ navigation }) {
 
   const fetchHistory = async () => {
     try {
-      const url = API_URL + '/chat/history';
+      const url = API_URL +  '/api/ai/history';
       const response = await fetch(url);
       const data = await response.json();
       setSessions(data.sessions || []);
