@@ -43,7 +43,7 @@ export default function ChatScreen({ language = 'fr' }) {
       id: '0',
       role: 'assistant',
       content: language === 'fr'
-        ? '👋 Bonjour ! Je suis princy. Je peux analyser votre compte Amazon, vous aider à commander sur Alibaba, surveiller vos concurrents, prévoir vos stocks et bien plus encore.\n\n**Que puis-je faire pour vous aujourd\'hui ?**'
+        ? '👋 Bonjour ! Je suis Princy. Je peux analyser votre compte Amazon, vous aider à commander sur Alibaba, surveiller vos concurrents, prévoir vos stocks et bien plus encore.\n\n**Que puis-je faire pour vous aujourd\'hui ?**'
         : '👋 Hello! I\'m Princy. I can analyze your Amazon account, help you order from Alibaba, monitor competitors, forecast inventory, and much more.\n\n**What can I do for you today?**'
     }
   ]);
