@@ -16,7 +16,7 @@ export default function ChatHistoryScreen({ navigation }) {
 
   const fetchHistory = async () => {
     try {
-      const response = await fetch(${API_URL}/chat/history);
+      const response = await fetch(API_URL + '/chat/history');
       const data = await response.json();
       setSessions(data.sessions || []);
     } catch (error) {
@@ -57,10 +57,10 @@ export default function ChatHistoryScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>📜 Historique Princy</Text>
+      <Text style={styles.title}>Historique Princy</Text>
       {sessions.length === 0 ? (
         <View style={styles.centered}>
-          <Text style={styles.emptyText}>Aucune conversation trouvée</Text>
+          <Text style={styles.emptyText}>Aucune conversation</Text>
         </View>
       ) : (
         <FlatList
@@ -77,14 +77,4 @@ export default function ChatHistoryScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#0a0a0a' },
   centered: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  title: { fontSize: 22, fontWeight: 'bold', color: '#FF9900', padding: 20 },
-  list: { padding: 16 },
-  sessionCard: {
-    backgroundColor: '#1a1a1a', borderRadius: 12, padding: 16,
-    marginBottom: 12, borderLeftWidth: 4, borderLeftColor: '#FF9900'
-  },
-  sessionDate: { color: '#FF9900', fontSize: 12, marginBottom: 6 },
-  sessionPreview: { color: '#ffffff', fontSize: 14, marginBottom: 6 },
-  sessionCount: { color: '#888', fontSize: 11 },
-  emptyText: { color: '#888', fontSize: 16 }
-});
+  title: { fontSize: 22, fontWeight: 'bold', color: '#FF9900', pad
