@@ -120,7 +120,13 @@ export default function ChatScreen({ language = 'fr' }) {
         <Text style={styles.headerSubtitle}>
           {language === 'fr' ? 'Princy' : 'Amazon & Alibaba Assistant'}
         </Text>
-      </LinearGradient>
+     <TouchableOpacity
+            onPress={() => navigation.navigate('ChatHistory')}
+            style={{alignSelf: 'flex-end', padding: 8}}
+          >
+            <Text style={{color: '#fff', fontSize: 12}}>📜 Historique</Text>
+          </TouchableOpacity>
+ </LinearGradient>
 
       {/* Quick Actions */}
       <ScrollView
