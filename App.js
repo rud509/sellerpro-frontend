@@ -21,6 +21,7 @@ import AlibabaScreen from './src/screens/AlibabaScreen';
 import NotificationsScreen from './src/screens/NotificationsScreen';
 import ProductDetailScreen from './src/screens/ProductDetailScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
+import ChatHistoryScreen from './src/screens/ChatHistoryScreen';
 
 // Theme
 import { COLORS } from './src/utils/theme';
@@ -166,9 +167,9 @@ export default function App() {
         <Stack.Screen name="Settings">
           {props => <SettingsScreen {...props} language={language} setLanguage={setLanguage} />}
         </Stack.Screen>
-      </Stack.Navigator>
-      <FlashMessage position="top" />
-    </NavigationContainer>
+        <Stack.Screen name="ChatHistory">
+          {props => <ChatHistoryScreen {...props} />}
+        </Stack.Screen>
   );
 }
 
