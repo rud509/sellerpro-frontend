@@ -77,8 +77,7 @@ export default function ChatHistoryScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#0a0a0a' },
   centered: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  title: { fontSize: 22, fontWeight: 'bold', color: '#FF9900', pad
-padding: 20 },
+  title: { fontSize: 22, fontWeight: 'bold', color: '#FF9900',padding: 20 },
   list: { padding: 16 },
   sessionCard: {
     backgroundColor: '#1a1a1a', borderRadius: 12, padding: 16,
