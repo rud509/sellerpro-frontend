@@ -36,7 +36,7 @@ const QUICK_ACTIONS_EN = [
   { label: '⭐ Improve listing', prompt: 'How can I optimize my Amazon listing to increase sales? Give me advice on title, bullets and keywords.', amazonData: false },
 ];
 
-export default function ChatScreen({ language = 'fr' }) {
+export default function ChatScreen({ language = 'fr', navigation }) {
   const t = translations[language];
   const [messages, setMessages] = useState([
     {
