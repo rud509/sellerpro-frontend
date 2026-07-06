@@ -28,7 +28,7 @@ export const aiAPI = {
   chat: (messages, sessionId, includeAmazon = false) => api.post('/api/ai/chat', {
     messages, session_id: sessionId, include_amazon_data: includeAmazon
   }),
-  getChatHistory: () => api.get('/api/ai/history'),
+ getChatHistory: () => api.get('/api/ai/history'),
   analyzeAccount: (days = 30) => api.get(`/api/ai/analyze/account?days=${days}`),
   analyzeProduct: (asin) => api.get(`/api/ai/analyze/product/${asin}`),
   researchProduct: (keyword, category) => api.post('/api/ai/research/product', { keyword, category }),
