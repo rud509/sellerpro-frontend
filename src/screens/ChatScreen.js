@@ -68,7 +68,7 @@ export default function ChatScreen({ language = 'fr', navigation }) {
         .map(m => ({ role: m.role, content: m.content }));
 
       const response = await aiAPI.chat(apiMessages, SESSION_ID, includeAmazonData);
-      const aiResponse = response.data?.reply || response.data?.response || 'Désolé, une erreur est survenue.';
+      const aiResponse = typeof response.data === 'string' ? response.data : (response.data?.reply || response.data?.response || 'Désolé, une erreur est survenue.');
 
       setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
