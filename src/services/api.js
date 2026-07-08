@@ -35,7 +35,7 @@ export const aiAPI = {
   negotiate: (data) => api.post('/api/ai/negotiate/alibaba', data),
   analyzeCompetitor: (asin, name) => api.post('/api/ai/analyze/competitor', { asin, competitor_name: name }),
   predictStock: () => api.get('/api/ai/predict/stock'),
-  weeklyReport: () => api.get('/api/ai/report/weekly'),
+  weeklyReport: () => api.get('/api/ai/report/weekly'),scanProduct: (query) => api.post('/api/ai/scan-product', { query }),
 };
 
 // ==================== PRODUITS ====================
