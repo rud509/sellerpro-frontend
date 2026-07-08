@@ -99,6 +99,12 @@ function MainTabs({ language, setLanguage }) {
       >
         {props => <AnalyticsScreen {...props} language={language} />}
       </Tab.Screen>
+   <Tab.Screen
+  name="Scanner"
+  options={{ tabBarLabel: '🏆 Produit Gagnant' }}
+>
+  {props => <ProductScannerScreen {...props} language={language} />}
+</Tab.Screen>
     </Tab.Navigator>
   );
 }
