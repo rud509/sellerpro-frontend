@@ -22,7 +22,7 @@ import NotificationsScreen from './src/screens/NotificationsScreen';
 import ProductDetailScreen from './src/screens/ProductDetailScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
 import ChatHistoryScreen from './src/screens/ChatHistoryScreen';
-import productScannerScreen from './src/screens/Productscannerscreen';
+import ProductScannerScreen from './src/screens/productscannerscreen';
 
 // Theme
 import { COLORS } from './src/utils/theme';
