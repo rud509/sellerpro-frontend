@@ -21,7 +21,7 @@ import AlibabaScreen from './src/screens/AlibabaScreen';
 import NotificationsScreen from './src/screens/NotificationsScreen';
 import ProductDetailScreen from './src/screens/ProductDetailScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
-import ChatHistoryScreen from './src/screens/ChatHistoryScreen';
+import ChatHistoryScreen from './src/screens/ChatHistoryScreen';import ProductScannerScreen from './src/screens/ProductScannerScreen';
 
 // Theme
 import { COLORS } from './src/utils/theme';
@@ -169,7 +169,9 @@ export default function App() {
         </Stack.Screen>
         <Stack.Screen name="ChatHistory">
           {props => <ChatHistoryScreen {...props} />}
-        </Stack.Screen>
+        </Stack.Screen><Stack.Screen name="ProductScanner">
+  {props => <ProductScannerScreen {...props} />}
+</Stack.Screen>
 </Stack.Navigator>
     </NavigationContainer>
   );
