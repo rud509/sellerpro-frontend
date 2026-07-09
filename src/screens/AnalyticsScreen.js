@@ -23,6 +23,10 @@ export default function AnalyticsScreen({ language = 'fr' }) {
   const [sellPrice, setSellPrice] = useState('');
   const [costPrice, setCostPrice] = useState('');
   const [weight, setWeight] = useState('1');
+  const [length, setLength] = useState('9');
+  const [pkgWidth, setPkgWidth] = useState('6');
+  const [pkgHeight, setPkgHeight] = useState('2');
+  const [category, setCategory] = useState('standard');
   const [fbaResult, setFbaResult] = useState(null);
   const [calcLoading, setCalcLoading] = useState(false);
 
@@ -45,7 +49,9 @@ export default function AnalyticsScreen({ language = 'fr' }) {
     setCalcLoading(true);
     try {
       const res = await analyticsAPI.fbaCalculator(
-        parseFloat(sellPrice), parseFloat(costPrice), parseFloat(weight) || 1
+    parseFloat(sellPrice), parseFloat(costPrice), parseFloat(weight) || 1,
+        category,
+        parseFloat(length) || 9, parseFloat(pkgWidth) || 6, parseFloat(pkgHeight) || 2
       );
       setFbaResult(res.data?.data);
     } catch(e) { console.log(e); }
