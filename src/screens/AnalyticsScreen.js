@@ -154,6 +154,31 @@ export default function AnalyticsScreen({ language = 'fr' }) {
           <TextInput style={ss.input} value={costPrice} onChangeText={setCostPrice} keyboardType="decimal-pad" placeholder="8.00" placeholderTextColor={COLORS.textMuted} />
           <Text style={ss.inputLabel}>{language==='fr'?'Poids (lbs)':'Weight (lbs)'}</Text>
           <TextInput style={ss.input} value={weight} onChangeText={setWeight} keyboardType="decimal-pad" placeholder="1.0" placeholderTextColor={COLORS.textMuted} />
+        <Text style={ss.inputLabel}>Longueur × Largeur × Hauteur (pouces)</Text>
+        <View style={{ flexDirection: 'row', gap: SPACING.sm }}>
+          <TextInput style={[ss.input, { flex: 1 }]} value={length} onChangeText={setLength} keyboardType="decimal-pad" placeholder="L" placeholderTextColor={COLORS.textMuted} />
+          <TextInput style={[ss.input, { flex: 1 }]} value={pkgWidth} onChangeText={setPkgWidth} keyboardType="decimal-pad" placeholder="l" placeholderTextColor={COLORS.textMuted} />
+          <TextInput style={[ss.input, { flex: 1 }]} value={pkgHeight} onChangeText={setPkgHeight} keyboardType="decimal-pad" placeholder="H" placeholderTextColor={COLORS.textMuted} />
+        </View>
+
+        <Text style={ss.inputLabel}>Catégorie</Text>
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm }}>
+          {[
+            { key: 'standard', label: 'Standard' },
+            { key: 'clothing', label: 'Vêtements' },
+            { key: 'electronics', label: 'Électronique' },
+            { key: 'beauty_health_baby', label: 'Beauté/Santé' },
+            { key: 'jewelry', label: 'Bijoux' },
+          ].map((c) => (
+            <TouchableOpacity
+              key={c.key}
+              onPress={() => setCategory(c.key)}
+              style={[ss.catBtn, category === c.key && ss.catBtnActive]}
+            >
+              <Text style={[ss.catBtnText, category === c.key && ss.catBtnTextActive]}>{c.label}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
 
           <TouchableOpacity style={ss.calcBtn} onPress={calculateFBA} disabled={calcLoading}>
             <LinearGradient colors={GRADIENTS.primary} style={ss.calcBtnInner}>
@@ -164,7 +189,8 @@ export default function AnalyticsScreen({ language = 'fr' }) {
           {fbaResult && (
             <View style={ss.resultCard}>
               {[
-                { label: language==='fr'?'Frais Amazon':'Amazon Fees', value: `$${fbaResult.referral_fee}`, color: COLORS.warning },
+               { label: language==='fr'?'Palier taille':'Size Tier', value: fbaResult.size_tier || '-', color: COLORS.info },
+              { label: language==='fr'?'Frais Amazon':'Amazon Fees', value: `$${fbaResult.referral_fee}`, color: COLORS.warning },
                 { label: language==='fr'?'Frais FBA':'FBA Fees', value: `$${fbaResult.fulfillment_fee}`, color: COLORS.warning },
                 { label: language==='fr'?'Frais stockage':'Storage Fees', value: `$${fbaResult.storage_fee}`, color: COLORS.warning },
                 { label: language==='fr'?'Total frais':'Total Fees', value: `$${fbaResult.total_fees}`, color: COLORS.danger },
@@ -222,4 +248,8 @@ const ss = StyleSheet.create({
   resultRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: SPACING.xs, borderBottomWidth: 1, borderBottomColor: COLORS.divider },
   resultLabel: { color: COLORS.textSecondary, fontSize: FONTS.sizes.md },
   resultValue: { fontSize: FONTS.sizes.lg, fontWeight: 'bold' },
+  catBtn: { paddingHorizontal: SPACING.md, paddingVertical: SPACING.sm, borderRadius: RADIUS.full, backgroundColor: COLORS.surface, borderWidth: 1, borderColor: COLORS.border },
+  catBtnActive: { backgroundColor: COLORS.primary, borderColor: COLORS.primary },
+  catBtnText: { color: COLORS.textSecondary, fontSize: FONTS.sizes.sm },
+  catBtnTextActive: { color: '#FFF', fontWeight: 'bold' },
 });
