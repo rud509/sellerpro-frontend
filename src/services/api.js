@@ -64,9 +64,8 @@ export const alibabaAPI = {
 export const analyticsAPI = {
   history: (days = 30) => api.get(`/api/analytics/history?days=${days}`),
   pnl: (days = 30) => api.get(`/api/analytics/pnl?days=${days}`),
-  fbaCalculator: (sellingPrice, costPrice, weightLbs = 1, category = 'standard') =>
-    api.get(`/api/analytics/fba-calculator?selling_price=${sellingPrice}&cost_price=${costPrice}&weight_lbs=${weightLbs}&category=${category}`),
-};
+ fbaCalculator: (sellingPrice, costPrice, weightLbs = 1, category = 'standard', lengthIn = 9, widthIn = 6, heightIn = 2) =>
+    api.get(/api/analytics/fba-calculator?selling_price=${sellingPrice}&cost_price=${costPrice}&weight_lbs=${weightLbs}&category=${category}&length_in=${lengthIn}&width_in=${widthIn}&height_in=${heightIn}),
 
 // ==================== CONCURRENTS ====================
 export const competitorsAPI = {
